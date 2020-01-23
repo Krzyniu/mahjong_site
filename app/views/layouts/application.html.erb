@@ -18,7 +18,7 @@
       <img src="https://www.singaporemint.com/media/catalog/product/cache/978d88c4fa4223d1f4b49319a9c20eba/F/5/F535-1_2.png" width="50" height="50" alt="">
   </a>
   <a class="navbar-brand">Poznański klub mahjonga</a>
-  
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -29,6 +29,7 @@
         <li class="nav-item active">
           <a class="nav-link"> <%= link_to 'Artykuły', articles_path %> </a>
         </li>
+
 
         <% if signed_in? %>
           <% if current_user.is_admin%>
