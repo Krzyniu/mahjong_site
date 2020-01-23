@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MahjongSite</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+
+  <body>
+
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+  <a class="navbar-brand">
+      <img src="https://www.singaporemint.com/media/catalog/product/cache/978d88c4fa4223d1f4b49319a9c20eba/F/5/F535-1_2.png" width="50" height="50" alt="">
+  </a>
+  <a class="navbar-brand">Poznański klub mahjonga</a>
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item active">
+          <a class="nav-link"> <%= link_to 'Artykuły', articles_path %> </a>
+        </li>
+
+        <% if signed_in? %>
+          <% if current_user.is_admin%>
+            <li class="nav-item active">
+              <a class="nav-link"> <%= link_to 'Nowy artykuł', new_article_path %> </a>
+            </li>
+          <% end %>
+        <% end %>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">Kontakt</a>
+        </li>
+
+        <% if signed_in? %>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Ligi</a>
+        </li>
+        <% end %>
+
+      </ul>
+
+        <% if signed_in? %>
+          Signed in as: <%= current_user.email %>
+          <%= button_to 'Sign out', sign_out_path, method: :delete %>
+        <% else %>
+          <%= link_to 'Sign in', sign_in_path %>
+        <% end %>
+
+        <div id="flash">
+          <% flash.each do |key, value| %>
+            <div class="flash <%= key %>"><%= value %></div>
+          <% end %>
+        </div> 
+  </div>
+</nav>
+
+<div class="container-fluid">
+
+  <% if signed_in? %>
+    <% if current_user.is_admin == 1 %>
+      yay
+    <% end %>
+  <% end %>
+
+  <%= yield %>
+</div>
+    
+  </body>
+</html>
