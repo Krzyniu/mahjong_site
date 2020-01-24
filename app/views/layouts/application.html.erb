@@ -67,15 +67,5 @@
 </nav>
 
 <div class="container-fluid">
-
-  <% if signed_in? %>
-    <% if current_user.is_admin == 1 %>
-      yay
-    <% end %>
-  <% end %>
-
   <%= yield %>
 </div>
-    
-  </body>
-</html>

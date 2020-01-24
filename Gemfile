@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 # Use sqlite3 as the database for Active Record
@@ -24,12 +26,17 @@ gem 'jbuilder', '~> 2.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-gem 'bootstrap', '~> 4.4.1'
+
+
+gem 'bootstrap'
 
 gem 'jquery-rails'
 
 #authentication
 gem "clearance"
+
+#imageupload
+gem "paperclip", "~> 6.0.0"
 
 
 # Reduces boot times through caching; required in config/boot.rb
