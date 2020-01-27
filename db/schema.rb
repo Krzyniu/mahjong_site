@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_24_122657) do
+ActiveRecord::Schema.define(version: 2020_01_27_094431) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -32,6 +32,23 @@ ActiveRecord::Schema.define(version: 2020_01_24_122657) do
     t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
+  create_table "matches", force: :cascade do |t|
+    t.integer "player_1_id"
+    t.integer "player_1_score"
+    t.integer "player_2_id"
+    t.integer "player_2_score"
+    t.integer "player_3_id"
+    t.integer "player_3_score"
+    t.integer "player_4_id"
+    t.integer "player_4_score"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["player_1_id"], name: "index_matches_on_player_1_id"
+    t.index ["player_2_id"], name: "index_matches_on_player_2_id"
+    t.index ["player_3_id"], name: "index_matches_on_player_3_id"
+    t.index ["player_4_id"], name: "index_matches_on_player_4_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -40,6 +57,11 @@ ActiveRecord::Schema.define(version: 2020_01_24_122657) do
     t.string "confirmation_token", limit: 128
     t.string "remember_token", limit: 128, null: false
     t.boolean "is_admin"
+    t.string "username"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["email"], name: "index_users_on_email"
     t.index ["remember_token"], name: "index_users_on_remember_token"
   end

@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  player_1_score: 1
+  user: one
+  player_2_score: 1
+  user: one
+  player_3_score: 1
+  user: one
+  player_4_score: 1
+
+two:
+  user: two
+  player_1_score: 1
+  user: two
+  player_2_score: 1
+  user: two
+  player_3_score: 1
+  user: two
+  player_4_score: 1

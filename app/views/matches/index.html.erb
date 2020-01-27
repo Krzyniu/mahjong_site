@@ -1,0 +1,24 @@
+<h1>Lista meczy</h1>
+
+
+<% @matches.each do |match| %>
+  <div class="row border bg-light">
+    <div class="col-1">Data</div>
+    <div class="col"><%= match.created_at %></div>
+  </div>
+  <div class="row">
+    <div class="col-1 border bg-light">Gracz:</div>
+    <div class="col-2"><%=User.find_by_id(match.player_1_id).email%><%= link_to ' Profil', user_path(User.find_by_id(match.player_1_id)) %></div>
+    <div class="col-2"><%=User.find_by_id(match.player_2_id).email%><%= link_to ' Profil', user_path(User.find_by_id(match.player_2_id)) %></div>
+    <div class="col-2"><%=User.find_by_id(match.player_3_id).email%><%= link_to ' Profil', user_path(User.find_by_id(match.player_3_id)) %></div>
+    <div class="col-2"><%=User.find_by_id(match.player_4_id).email%><%= link_to ' Profil', user_path(User.find_by_id(match.player_4_id)) %></div>
+  </div>
+  <div class="row">
+    <div class="col-1 border bg-light">Wynik:</div>
+    <div class="col-2"><%= match.player_1_score %></div>
+    <div class="col-2"><%= match.player_2_score %></div>
+    <div class="col-2"><%= match.player_3_score %></div>
+    <div class="col-2"><%= match.player_4_score %></div>
+  </div>
+
+<% end %>
