@@ -1,0 +1,36 @@
+<%= form_with model: @match do |form| %>
+
+<% if @match.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@match.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @match.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="row border">
+    <div class="col-1 border bg-light">Gracz:</div>
+    <div class="col"><%= form.number_field :player_1_id %></div>
+    <div class="col"><%= form.number_field :player_2_id %></div>
+    <div class="col"><%= form.number_field :player_3_id %></div>
+    <div class="col"><%= form.number_field :player_4_id %></div>
+  </div>
+  <div class="row border">
+    <div class="col-1 border bg-light">Wynik:</div>
+    <div class="col"><%= form.number_field :player_1_score %></div>
+    <div class="col"><%= form.number_field :player_2_score %></div>
+    <div class="col"><%= form.number_field :player_3_score %></div>
+    <div class="col"><%= form.number_field :player_4_score %></div>
+  </div>
+  
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+<% end %>
