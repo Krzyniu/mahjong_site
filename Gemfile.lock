@@ -64,7 +64,7 @@ GEM
     bindex (0.8.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
-    bootstrap (4.3.1)
+    bootstrap (4.4.1)
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 1.14.3, < 2)
       sassc-rails (>= 2.0.0)
@@ -225,7 +225,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.4.2)
-  bootstrap
+  bootstrap (~> 4.4.1)
   byebug
   capybara (>= 2.15)
   clearance
@@ -236,6 +236,7 @@ DEPENDENCIES
   rails (~> 6.0.2, >= 6.0.2.1)
   sass-rails (>= 6)
   selenium-webdriver
+  sprockets-rails
   sqlite3 (~> 1.4)
   turbolinks (~> 5)
   tzinfo-data

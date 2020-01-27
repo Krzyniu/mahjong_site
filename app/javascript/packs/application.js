@@ -8,11 +8,16 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
-
-//= require bootstrap
-//= require jquery
+//= require jquery3
 //= require jquery_ujs
+//= require popper
+
 //= require turbolinks
+
+//= require bootstrap-sprockets
+
+
+
 //= require_tree .
 
 // Uncomment to copy all static images under ../images to the output folder and reference
