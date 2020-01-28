@@ -14,4 +14,19 @@
 
  @import "bootstrap";
  
- 
+body{
+    background-image: image-url('bg_image.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+
+.backgrounddiv{
+    background-image: image-url('bg_inside.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+
+
+.space { margin:0; padding:0; height:50px; } // height as desired

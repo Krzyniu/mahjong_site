@@ -1,27 +1,42 @@
-<p>
-  <%= image_tag @article.image.url(:large) %>
-</p>
+<div class="space"></div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<div>
  
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
 
-<h2>Comments</h2>
-<%= render @article.comments %>
+  <div class="d-flex justify-content-center">
+    <p>
+      <h1><strong><%= @article.title %></strong></h1>
+    </p>
+  </div>
 
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>
+  <div class="d-flex justify-content-center">
+    <div> 
+      
 
-<% if signed_in? %>
-  <% if current_user.is_admin%>
-    <%= link_to 'Edit', edit_article_path(@article) %>
-  <% end %>
-<% end %>
+      <p> <%= image_tag @article.image.url(:large) %> </p>
+      
+      <p>
+        <strong>Text:</strong>
+        <%= @article.text %>
+      </p>
+    </div>
+  </div>
 
-<%= link_to 'Back', articles_path %>
+  <div class="backgrounddiv">
+  <div>
+    <h2>Komentarze</h2>
+      <%= render @article.comments %>
+      <h2>Dodaj komentarz:</h2>
+      <%= render 'comments/form' %>
+
+      <% if signed_in? %>
+        <% if current_user.is_admin%>
+          <%= link_to 'Edytuj artykuł', edit_article_path(@article) %>
+        <% end %>
+      <% end %>
+  </div>
+  </div>
+
+</div>
+
+<div class="space"></div>
