@@ -30,3 +30,10 @@ body{
 
 
 .space { margin:0; padding:0; height:50px; } // height as desired
+
+.jumbo {
+    background-image: image-url('bamboo.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+  }
