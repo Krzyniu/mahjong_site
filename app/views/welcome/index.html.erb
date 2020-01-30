@@ -1,16 +1,67 @@
 
-<div class="space"></div>
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(45).jpg"
+        alt="First slide">
+      <div class="carousel-caption">
+        <h1 class="h1-responsive"><%= Article.last.title %></h1>
+        <p><%= Article.last.text %></p>
+        <p><%= Article.last.created_at.to_date %></p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(46).jpg"
+        alt="Second slide">
+      <div class="carousel-caption">
+        <h1 class="h1-responsive"><%= Article.second_to_last.title %><</h1>
+        <p><%= Article.second_to_last.text %></p>
+        <p><%= Article.second_to_last.created_at.to_date %></p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(47).jpg"
+        alt="Third slide">
+      <div class="carousel-caption">
+        <h1 class="h1-responsive"><%= Article.third_to_last.title %></h1>
+        <p><%= Article.third_to_last.text %></p>
+        <p><%= Article.third_to_last.created_at.to_date %></p>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 
-<div class="jumbotron card card-image jumbo">
 
-  <div class="text-white text-center py-5 px-4 ">
+<div class="jumbotron card card-image">
+
+  <div class="text-black text-center px-4 ">
     <div>
       <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong>Witamy na stronie</strong></h2>
-      <p class="mx-5 mb-5">Strona Poznańskiego klubu mahjonga
+      <p class="mx-5 mb-5 font-bold">Poznańskiego klubu mahjonga
       </p>
-      <a class="btn btn-outline-white btn-md"><i class="fas fa-clone left"></i> View project</a>
+      <a class="btn" href="https://www.facebook.com/mahjongpoznan/">
+        <%= fa_icon "facebook-square 4x"%>
+      </a>
+      <a class="btn" href="#">
+        <%= fa_icon "instagram 4x"%>
+      </a>
+      <a class="btn" href="#">
+        <%= fa_icon "twitter-square 4x"%>
+      </a>
     </div>
   </div>
   
 </div>
 
+
+
+
+<div class="space"></div>

@@ -14,29 +14,32 @@
     </div>
   <% end %>
   
-  <div class="form-group">
-    <div class="row border">
-        <div class="col border bg-light form-control">Gracz:</div>
-        <div class="col"><%= form.number_field :player_1_id, class:"form-control" %></div>
-        <div class="col"><%= form.number_field :player_2_id, class:"form-control" %></div>
-        <div class="col"><%= form.number_field :player_3_id, class:"form-control" %></div>
-        <div class="col"><%= form.number_field :player_4_id, class:"form-control" %></div>
-
+ <div class="jumbo2 card card-image">
+  <div class="form">
+    <div class="row">
+        <div class="col-md-offset-1 col-md-12 "><%= form.submit "Stwórz grę", class:"form-control" %></div>
     </div>
-    
-    <div class="row border">
-        <div class="col border bg-light form-control">Wynik:</div>
-        <div class="col"><%= form.number_field :player_1_score, class:"form-control" %></div>
-        <div class="col"><%= form.number_field :player_2_score, class:"form-control" %></div>
-        <div class="col"><%= form.number_field :player_3_score, class:"form-control" %></div>
-        <div class="col"><%= form.number_field :player_4_score, class:"form-control" %></div>
-
+    <div class="row">
+        <div class="col-md-2">Gracz:</div>
+        <div class="col-md-4">Wynik:</div>
     </div>
-    
+    <div class="row">
+        <div class="col-md-2"><%= collection_select(:match, :player_1_id, User.all,:id, :email,{}, {:class=>'form-control'}) %></div>
+        <div class="col-md-4"><%= form.number_field :player_1_score, class:"form-control" %></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"><%= collection_select(:match, :player_2_id, User.all,:id, :email,{}, {:class=>'form-control'}) %></div>
+        <div class="col-md-4"><%= form.number_field :player_2_score, class:"form-control" %></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"><%= collection_select(:match, :player_3_id, User.all,:id, :email,{}, {:class=>'form-control'}) %></div>
+        <div class="col-md-4"><%= form.number_field :player_3_score, class:"form-control" %></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"><%= collection_select(:match, :player_4_id, User.all,:id, :email,{}, {:class=>'form-control'}) %></div>
+        <div class="col-md-4"><%= form.number_field :player_4_score, class:"form-control" %></div>
+    </div>
   </div>
-  
-  <p>
-    <%= form.submit class:"form-control"%>
-  </p>
- 
+</div>
+
 <% end %>

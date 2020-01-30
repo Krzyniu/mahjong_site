@@ -17,6 +17,8 @@ require("channels")
 //= require bootstrap-sprockets
 
 
+//= require font-awesome
+ 
 
 //= require_tree .
 

@@ -13,6 +13,7 @@
  */
 
  @import "bootstrap";
+ @import "font-awesome";
  
 body{
     background-image: image-url('bg_image.jpeg');
@@ -37,3 +38,22 @@ body{
     background-attachment: fixed;
     background-size: 100%;
   }
+
+.jumbo2{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    padding: 10px;
+    margin: 5px;
+
+}
+  .carousel-inner{
+      height:300px;
+      margin-top: 30px;
+  }
+
+  .carousel-caption {
+    top: 80px;
+    bottom: auto;
+    
+}

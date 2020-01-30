@@ -2,12 +2,14 @@
 
 <div>
  
-
+<div class="jumbotron card card-image">
   <div class="d-flex justify-content-center">
     <p>
       <h1><strong><%= @article.title %></strong></h1>
     </p>
   </div>
+
+
 
   <div class="d-flex justify-content-center">
     <div> 
@@ -21,11 +23,13 @@
       </p>
     </div>
   </div>
-
-  <div class="backgrounddiv">
+</div>
+  <div class="jumbotron card card-image">
   <div>
     <h2>Komentarze</h2>
-      <%= render @article.comments %>
+    <div class="space"></div>
+    <%= render @article.comments %>
+    <div class="space"></div>
       <h2>Dodaj komentarz:</h2>
       <%= render 'comments/form' %>
 
