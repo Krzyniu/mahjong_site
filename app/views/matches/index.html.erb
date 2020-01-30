@@ -3,7 +3,7 @@
 
 <% @matches.each do |match| %>
 
-<div class="jumbo2 card card-image">
+<div class="jumbo2 card card">
   <div class="p-2">
     <div class="row border bg-light">
       <div class="col-sm-1">Data</div>
@@ -26,3 +26,9 @@
   </div>
 </div>
 <% end %>
+
+<div class="jumbo2 card card">
+<div class="row justify-content-center">
+  <%= will_paginate @matches, previous_label:"Wstecz", next_label:"Do przodu"   %>
+</div>
+</div>
