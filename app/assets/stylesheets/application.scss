@@ -16,10 +16,11 @@
  @import "font-awesome";
  
 body{
-    background-image: image-url('bg_image.jpeg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100%;
+    background: image-url('bg_image.jpeg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .backgrounddiv{
