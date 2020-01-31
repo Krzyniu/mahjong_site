@@ -12,6 +12,8 @@ gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 
 gem 'pg'
 
+gem 'rails_12factor', group: :production
+
 
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
