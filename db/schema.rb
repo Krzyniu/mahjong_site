@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_01_27_094431) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "text"
@@ -26,20 +29,20 @@ ActiveRecord::Schema.define(version: 2020_01_27_094431) do
   create_table "comments", force: :cascade do |t|
     t.string "commenter"
     t.text "body"
-    t.integer "article_id", null: false
+    t.bigint "article_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
   create_table "matches", force: :cascade do |t|
-    t.integer "player_1_id"
+    t.bigint "player_1_id"
     t.integer "player_1_score"
-    t.integer "player_2_id"
+    t.bigint "player_2_id"
     t.integer "player_2_score"
-    t.integer "player_3_id"
+    t.bigint "player_3_id"
     t.integer "player_3_score"
-    t.integer "player_4_id"
+    t.bigint "player_4_id"
     t.integer "player_4_score"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
