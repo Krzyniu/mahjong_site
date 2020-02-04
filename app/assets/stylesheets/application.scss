@@ -23,15 +23,9 @@ body{
     background-size: cover;
 }
 
-.backgrounddiv{
-    background-image: image-url('bg_inside.jpeg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100%;
-}
 
 
-.space { margin:0; padding:0; height:50px; } // height as desired
+.space { margin:0; padding:0; height:50px; }
 
 .jumbo {
     background-image: image-url('bamboo.jpeg');
@@ -54,7 +48,7 @@ body{
   }
 
   .carousel-caption {
-    top: 80px;
-    bottom: auto;
+    top: 10%;
     
 }
+

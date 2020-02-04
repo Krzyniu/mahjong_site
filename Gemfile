@@ -10,8 +10,9 @@ gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3', '~> 1.4'
 
+#postgres database     required for heroku
 gem 'pg'
-
+#another heroku requirement
 gem 'rails_12factor', group: :production
 
 
@@ -71,5 +72,8 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-
+#page pagination buttery butter
 gem 'will_paginate', '~> 3.1.0'
+
+#filtergem
+gem 'filterrific', '~> 5.2', '>= 5.2.1'

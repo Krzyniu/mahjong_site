@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resources :user
 
+  resources :leagues
+
   resources :matches
 
   root 'welcome#index'

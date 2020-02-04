@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_27_094431) do
+ActiveRecord::Schema.define(version: 2020_02_03_081203) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,14 @@ ActiveRecord::Schema.define(version: 2020_01_27_094431) do
     t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
+  create_table "leagues", force: :cascade do |t|
+    t.string "name"
+    t.date "start"
+    t.date "end"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "matches", force: :cascade do |t|
     t.bigint "player_1_id"
     t.integer "player_1_score"
@@ -46,6 +54,8 @@ ActiveRecord::Schema.define(version: 2020_01_27_094431) do
     t.integer "player_4_score"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "league_id", null: false
+    t.index ["league_id"], name: "index_matches_on_league_id"
     t.index ["player_1_id"], name: "index_matches_on_player_1_id"
     t.index ["player_2_id"], name: "index_matches_on_player_2_id"
     t.index ["player_3_id"], name: "index_matches_on_player_3_id"
@@ -70,4 +80,5 @@ ActiveRecord::Schema.define(version: 2020_01_27_094431) do
   end
 
   add_foreign_key "comments", "articles"
+  add_foreign_key "matches", "leagues"
 end

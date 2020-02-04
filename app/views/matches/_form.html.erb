@@ -39,6 +39,14 @@
         <div class="col-md-2"><%= collection_select(:match, :player_4_id, User.all,:id, :email,{}, {:class=>'form-control'}) %></div>
         <div class="col-md-4"><%= form.number_field :player_4_score, class:"form-control" %></div>
     </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">Liga:</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4"><%= collection_select(:match, :league_id, League.all,:id, :name,{}, {:class=>'form-control'}) %></div>
+    </div>
   </div>
 </div>
 

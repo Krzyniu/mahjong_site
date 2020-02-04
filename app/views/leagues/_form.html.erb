@@ -1,0 +1,43 @@
+<%= form_with model: @league, local: true do |form| %>
+
+<% if @match.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@match.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @match.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="container bootstrap snippet">
+    <h1 class="text-primary"><span class="glyphicon glyphicon-user"></span>Edytuj ligę</h1>
+      <hr>
+	<div class="row">
+      
+      <!-- edit form column -->
+      <div class="col-md-9 personal-info">
+        <h3>Informacje o lidze</h3>
+        
+        <form class="form-horizontal" role="form">
+
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Nazwa ligi:</label>
+            <div class="col-lg-8">
+              <%= form.text_field :name, class:"form-control" %>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <%= form.submit class:"form-control" %>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>
+<hr>
+<% end %>

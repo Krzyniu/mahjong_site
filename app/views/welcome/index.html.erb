@@ -3,10 +3,9 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <a href="/articles/<%= Article.last.id %>"> 
-        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(45).jpg"
-          alt="First slide">
+        <%= image_tag Article.last.image.url(:large), :class=>"card-img-top" %>
         <div class="carousel-caption">
-          <h1 class="h1-responsive"><%= Article.last.title %></h1>
+          <h1><%= Article.last.title %></h1>
           <p><%= Article.last.text %></p>
           <p><%= Article.last.created_at.to_date %></p>
         </div>
@@ -14,10 +13,9 @@
     </div>
     <div class="carousel-item">
       <a href="/articles/<%= Article.second_to_last.id %>"> 
-        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(46).jpg"
-          alt="Second slide">
+        <%= image_tag Article.second_to_last.image.url(:large), :class=>"card-img-top" %>
         <div class="carousel-caption">
-          <h1 class="h1-responsive"><%= Article.second_to_last.title %><</h1>
+          <h1><%= Article.second_to_last.title %><</h1>
           <p><%= Article.second_to_last.text %></p>
           <p><%= Article.second_to_last.created_at.to_date %></p>
         </div>
@@ -25,10 +23,9 @@
     </div>
     <div class="carousel-item">
       <a href="/articles/<%= Article.third_to_last.id %>"> 
-        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(47).jpg"
-          alt="Third slide">
+        <%= image_tag Article.third_to_last.image.url(:large), :class=>"card-img-top" %>
         <div class="carousel-caption">
-          <h1 class="h1-responsive"><%= Article.third_to_last.title %></h1>
+          <h1><%= Article.third_to_last.title %></h1>
           <p><%= Article.third_to_last.text %></p>
           <p><%= Article.third_to_last.created_at.to_date %></p>
         </div>
@@ -48,20 +45,22 @@
 
 <div class="jumbotron card card-image">
 
-  <div class="text-black text-center px-4 ">
+  <div class="text-black text-center ">
     <div>
-      <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong>Witamy na stronie</strong></h2>
-      <p class="mx-5 mb-5 font-bold">Poznańskiego klubu mahjonga
+      <h2 class="card-title h1-responsive font-bold"><strong>Witamy na stronie</strong></h2>
+      <p class="font-bold">Poznańskiego klubu mahjonga
       </p>
-      <a class="btn" href="https://www.facebook.com/mahjongpoznan/">
-        <%= fa_icon "facebook-square 4x"%>
-      </a>
-      <a class="btn" href="#">
-        <%= fa_icon "instagram 4x"%>
-      </a>
-      <a class="btn" href="#">
-        <%= fa_icon "twitter-square 4x"%>
-      </a>
+      <span>
+        <a class="btn" href="https://www.facebook.com/mahjongpoznan/">
+          <%= fa_icon "facebook-square 4x"%>
+        </a>
+        <a class="btn" href="#">
+          <%= fa_icon "instagram 4x"%>
+        </a>
+        <a class="btn" href="#">
+          <%= fa_icon "twitter-square 4x"%>
+        </a>
+      </span>
     </div>
   </div>
   
@@ -71,3 +70,4 @@
 
 
 <div class="space"></div>
+
