@@ -5,7 +5,12 @@ class LeaguesController < ApplicationController
     end
 
     def new
-        @league = League.new
+        if signed_in?
+            restrict_access if current_user.is_admin != true 
+            @league = League.new
+        else 
+            restrict_access
+        end
     end
 
     def create
@@ -19,7 +24,9 @@ class LeaguesController < ApplicationController
         
     end
 
-
+    def restrict_access
+        redirect_to root_path
+    end
 
     private
         def league_params

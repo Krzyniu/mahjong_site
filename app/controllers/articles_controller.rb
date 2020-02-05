@@ -9,11 +9,21 @@ class ArticlesController < ApplicationController
     end
     
     def new
-        @article = Article.new
+        if signed_in?
+            restrict_access if current_user.is_admin != true 
+            @article = Article.new
+        else 
+            restrict_access
+        end
     end
 
     def edit
-        @article = Article.find(params[:id])
+        if signed_in?
+            restrict_access if current_user.is_admin != true 
+            @article = Article.find(params[:id])
+        else 
+            restrict_access
+        end
     end
 
     def create
@@ -37,10 +47,18 @@ class ArticlesController < ApplicationController
     end
 
     def destroy
-        @article = Article.find(params[:id])
-        @article.destroy
-       
-        redirect_to articles_path
+        if signed_in?
+            restrict_access if current_user.is_admin != true 
+            @article = Article.find(params[:id])
+            @article.destroy
+            redirect_to articles_path
+        else 
+            restrict_access
+        end
+    end
+
+    def restrict_access
+        redirect_to root_path
     end
 
     private

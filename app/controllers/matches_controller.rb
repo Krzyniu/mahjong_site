@@ -8,7 +8,11 @@ class MatchesController < ApplicationController
     end
      
     def new
-        @match = Match.new
+        if signed_in?
+            @match = Match.new
+        else 
+            restrict_access
+        end
     end
 
     def create
@@ -20,6 +24,10 @@ class MatchesController < ApplicationController
             render 'new'
         end
         
+    end
+
+    def restrict_access
+        redirect_to root_path
     end
 
     private
