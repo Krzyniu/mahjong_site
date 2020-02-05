@@ -76,6 +76,10 @@
                 <%= link_to 'Zaloguj', sign_in_path %>
               <% end %>
 
+              <%if signed_in?%>
+                <%= image_tag current_user.image.url(:icon) %>
+              <%end%>
+
               <div id="flash">
                 <% flash.each do |key, value| %>
                   <div class="flash <%= key %>"><%= value %></div>
