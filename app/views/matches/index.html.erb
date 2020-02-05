@@ -28,8 +28,20 @@
       <div class="col-sm-2"><%=League.find_by_id( match.league_id).name %></div>
     </div>
 
+    <div class="row">
+      <% if signed_in? %>
+        <% if current_user.is_admin%>
+          <div class="btn btn-danger"><%= link_to 'Usuń', match_path(match),
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %></div>
+        <% end %>
+      <% end %>
+      
+    </div>
+
   </div>
 </div>
+
 <% end %>
 
 <div class="jumbo2 card card">

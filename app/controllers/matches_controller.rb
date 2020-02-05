@@ -26,6 +26,17 @@ class MatchesController < ApplicationController
         
     end
 
+    def destroy
+        if signed_in?
+            restrict_access if current_user.is_admin != true 
+            @match = Match.find(params[:id])
+            @match.destroy
+            redirect_to matches_path
+        else 
+            restrict_access
+        end
+    end
+
     def restrict_access
         redirect_to root_path
     end
