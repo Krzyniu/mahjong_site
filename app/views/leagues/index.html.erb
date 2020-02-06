@@ -18,7 +18,7 @@
                             <div class="col-sm">Suma wyników</div>
                         </div>
 
-                        <%= @league_scores[league.id].each_key do |key| %>
+                        <% @league_scores[league.id].each_key do |key| %>
                             <div class="row">
                                 <div class="col-sm-4 border bg-light"><%= User.find(key).email%></div>
                                 <div class="col-sm"><%= @league_scores[league.id][key] %></div>
