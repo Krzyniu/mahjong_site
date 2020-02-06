@@ -24,6 +24,7 @@ class LeaguesController < ApplicationController
                 end
                 
                 @league_scores[league.id]=@scores.deep_dup.delete_if {|key, value| value == 0 }
+                @league_scores[league.id]= @league_scores[league.id].sort_by {|_key, value| value}.reverse.to_h
             end
         else
             restrict_access
