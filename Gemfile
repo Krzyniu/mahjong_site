@@ -77,3 +77,7 @@ gem 'will_paginate', '~> 3.1.0'
 
 #filtergem
 gem 'filterrific', '~> 5.2', '>= 5.2.1'
+
+#email
+gem 'mail_form'
+gem 'dotenv-rails', groups: [:development, :test]

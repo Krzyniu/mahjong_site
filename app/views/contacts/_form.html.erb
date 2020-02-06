@@ -1,0 +1,19 @@
+<%= form_with model: @contact do |f| %>
+    <div class="col-md-6">
+        <div>Imie</div>
+        <%= f.text_field  :name, required: true, class: "form-text-area" %></br>
+
+        <div>Email</div>
+        <%= f.text_field :email, required: true, class: "form-text-area" %></br>
+
+      <div>Wiadomość</div>
+      <%= f.text_area :message, rows: 8, cols: 40, required: true, class: "form-text-area",
+                        placeholder: "Send me a message"%></br>
+
+
+      <%= f.submit 'Wyślij', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+  <div class="col-md-6" id="flash-message">
+    <%= render 'flash' %>
+  </div>
