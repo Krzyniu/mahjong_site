@@ -11,10 +11,31 @@
     </div>
     <div class="row">
       <div class="col-sm-1 border bg-light">Gracze:</div>
-      <div class="col-sm-2"><%=User.find_by_id(match.player_1_id).email%><%= link_to ' Profil', user_path(User.find_by_id(match.player_1_id)) %></div>
-      <div class="col-sm-2"><%=User.find_by_id(match.player_2_id).email%><%= link_to ' Profil', user_path(User.find_by_id(match.player_2_id)) %></div>
-      <div class="col-sm-2"><%=User.find_by_id(match.player_3_id).email%><%= link_to ' Profil', user_path(User.find_by_id(match.player_3_id)) %></div>
-      <div class="col-sm-2"><%=User.find_by_id(match.player_4_id).email%><%= link_to ' Profil', user_path(User.find_by_id(match.player_4_id)) %></div>
+
+      <%if User.find_by_id(match.player_1_id).username.blank?%>
+        <div class="col-sm-2"><%= link_to User.find_by_id(match.player_1_id).email, user_path(User.find_by_id(match.player_1_id)) %></div>
+      <%else%>
+        <div class="col-sm-2"><%= link_to User.find_by_id(match.player_1_id).username, user_path(User.find_by_id(match.player_1_id)) %></div>
+      <%end%>
+
+      <%if User.find_by_id(match.player_2_id).username.blank?%>
+        <div class="col-sm-2"><%= link_to User.find_by_id(match.player_2_id).email, user_path(User.find_by_id(match.player_2_id)) %></div>
+      <%else%>
+        <div class="col-sm-2"><%= link_to User.find_by_id(match.player_2_id).username, user_path(User.find_by_id(match.player_2_id)) %></div>
+      <%end%>
+
+      <%if User.find_by_id(match.player_3_id).username.blank?%>
+        <div class="col-sm-2"><%= link_to User.find_by_id(match.player_3_id).email, user_path(User.find_by_id(match.player_3_id)) %></div>
+      <%else%>
+        <div class="col-sm-2"><%= link_to User.find_by_id(match.player_3_id).username, user_path(User.find_by_id(match.player_3_id)) %></div>
+      <%end%>
+
+      <%if User.find_by_id(match.player_4_id).username.blank?%>
+        <div class="col-sm-2"><%= link_to User.find_by_id(match.player_4_id).email, user_path(User.find_by_id(match.player_4_id)) %></div>
+      <%else%>
+        <div class="col-sm-2"><%= link_to User.find_by_id(match.player_4_id).username, user_path(User.find_by_id(match.player_4_id)) %></div>
+      <%end%>
+
     </div>
     <div class="row">
       <div class="col-sm-1 border bg-light">Wyniki:</div>
@@ -25,7 +46,7 @@
     </div>
     <div class="row">
       <div class="col-sm-1 border bg-light">Liga:</div>
-      <div class="col-sm-2"><%=League.find_by_id( match.league_id).name %></div>
+      <div class="col-sm-2"><%=League.find_by_id(match.league_id).name %></div>
     </div>
 
     <div class="row">

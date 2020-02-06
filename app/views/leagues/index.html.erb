@@ -20,7 +20,11 @@
 
                         <% @league_scores[league.id].each_key do |key| %>
                             <div class="row">
-                                <div class="col-sm-4 border bg-light"><%= User.find(key).email%></div>
+                                <%if User.find(key).username.blank?%>
+                                    <div class="col-sm-4 border bg-light"><%= User.find(key).email%></div>
+                                <%else%>
+                                    <div class="col-sm-4 border bg-light"><%= User.find(key).username%></div>
+                                <%end%>
                                 <div class="col-sm"><%= @league_scores[league.id][key] %></div>
                             </div>
                         <%end%>
