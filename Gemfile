@@ -81,3 +81,6 @@ gem 'filterrific', '~> 5.2', '>= 5.2.1'
 #email
 gem 'mail_form'
 gem 'dotenv-rails', groups: [:development, :test]
+
+#scheduler/cron tasks
+gem 'whenever', :require => false
