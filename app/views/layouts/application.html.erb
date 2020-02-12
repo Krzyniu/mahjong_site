@@ -5,8 +5,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
 
     	
     <meta name="viewport" content="initial-scale=1.0"/>
@@ -82,12 +82,6 @@
               <%if signed_in?%>
                 <%= image_tag current_user.image.url(:icon) %>
               <%end%>
-
-              <div id="flash">
-                <% flash.each do |key, value| %>
-                  <div class="flash <%= key %>"><%= value %></div>
-                <% end %>
-              </div> 
             </li>
     </ul>
 
